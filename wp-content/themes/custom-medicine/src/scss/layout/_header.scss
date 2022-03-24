@@ -1,0 +1,130 @@
+.header {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: fixed;
+  background: white;
+  top: 0;
+  z-index: 9999;
+  transition: 0.5s all;
+  &.sticky {
+    padding: 15px 0;
+    border-bottom: 1px solid ghostwhite;
+  }
+  @media screen and (max-width: 992px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  &-inner {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 992px) {
+      justify-content: space-between;
+    }
+  }
+  .site-branding {
+    margin-right: 100px;
+    @media screen and (max-width: 1024px) {
+      z-index: 60;
+      margin-right: 50px;
+    }
+  }
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  li {
+    margin-right: 50px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 28px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      color: $primary;
+      transition: 0.3s all;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.menu-wrapper {
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  @media screen and (max-width: 992px) {
+    position: fixed;
+    top: 0;
+    background: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    nav {
+      margin-top: 200px;
+      @media screen and (max-width: 768px) {
+        margin-top: 150px;
+      }
+      @media screen and (max-width: 475px) {
+        margin-top: 100px;
+      }
+    }
+    .menu {
+      flex-direction: column;
+      li {
+        margin-right: 0;
+        margin-bottom: 40px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @media screen and (max-width: 768px) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .register-btn {
+      margin-top: 70px;
+      margin-bottom: 30px;
+      @media screen and (max-width: 768px) {
+        margin-top: 30px;
+      }
+      color: #fff;
+      background: #323232;
+      &:hover {
+        color: #323232;
+        background: #fff;
+      }
+    }
+  }
+}
+
+.language-switcher {
+  margin-left: 30px;
+  @media screen and (max-width: 992px) {
+    margin-left: 0;
+  }
+  select {
+    border: none;
+    cursor: pointer;
+  }
+  option {
+    cursor: pointer;
+  }
+}
